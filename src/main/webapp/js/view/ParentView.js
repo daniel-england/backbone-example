@@ -16,6 +16,8 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
             //self.model - itemCollection
 
             render: function() {
+                console.log("rendering from the ParentView.");
+
                 var self = this;
 
                 self.$el.empty();
@@ -25,9 +27,6 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
                     var itemContainer = $(self.itemContainerTemplate({item: item}));
 
                     self.$el.append(itemContainer);
-
-                    var view = new WhateverView();
-                    view.render();
 
                     var itemView = self.getSubView(item);
                     itemView.setElement(itemContainer);

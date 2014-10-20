@@ -14,6 +14,7 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
             //self.model - itemCollection
 
             render: function() {
+                console.log("rendering from the MemoryLeakParentView");
                 var self = this;
 
                 self.$el.empty();
