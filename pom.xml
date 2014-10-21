@@ -10,14 +10,15 @@
   <name>Backbone Example</name>
  
   <properties>
-    <jettyVersion>7.2.0.v20101020</jettyVersion>
+    <jettyVersion>8.1.16.v20140903</jettyVersion>
   </properties>
  
   <dependencies>
     <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-server</artifactId>
-      <version>${jettyVersion}</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
  

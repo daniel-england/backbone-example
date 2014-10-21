@@ -10,6 +10,7 @@ define(['jquery', 'underscore', 'backbone'],
 
             initialize: function() {
                 var self = this;
+                console.log("initializing the ItemView (%s)", self.cid);
 
                 self.listenTo(self.model, 'change:color', self.removeOldCss);
             },
@@ -20,6 +21,7 @@ define(['jquery', 'underscore', 'backbone'],
 
             render: function() {
                 var self = this;
+                console.log("rendering the ItemView (%s)", self.cid);
 
                 self.$el.addClass(self.getBorderClass(self.model.get('color')));
 
@@ -48,7 +50,7 @@ define(['jquery', 'underscore', 'backbone'],
             removeOldCss: function() {
                 var self = this;
 
-                console.log('I am responding to an event: ' + self.cid);
+                console.log('I am responding to an event: %s', self.cid);
 
                 var borderClass = self.getBorderClass(self.model.previous('color'));
 

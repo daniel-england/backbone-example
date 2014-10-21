@@ -10,11 +10,13 @@ define(['jquery', 'underscore', 'backbone'],
             ),
 
             initialize: function() {
-
+                var self = this;
+                console.log("initializing the ItemDetailsView (%s)", self.cid);
             },
 
             render: function(item) {
                 var self = this;
+                console.log("rendering the ItemDetailsView (%s)", self.cid);
 
                 self.model = item;
 

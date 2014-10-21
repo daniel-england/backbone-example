@@ -7,6 +7,7 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
 
             initialize: function() {
                 var self = this;
+                console.log("initializing from the MemoryLeakParentView (%s)", self.cid);
 
                 self.listenTo(self.model, 'change:color', self.updateCounts);
             },
@@ -14,8 +15,8 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
             //self.model - itemCollection
 
             render: function() {
-                console.log("rendering from the MemoryLeakParentView");
                 var self = this;
+                console.log("rendering from the MemoryLeakParentView (%s)", self.cid);
 
                 self.$el.empty();
 
