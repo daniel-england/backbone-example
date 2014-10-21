@@ -5,11 +5,13 @@ define([
     return Backbone.Router.extend({
 
         routes: {
+            '': 'showMain', /* default route */
             'main': 'showMain',
             'item/:itemId': 'showItem'
         },
 
         initialize: function () {
+            console.log("initializing the Router.");
             var self = this;
 
             var item1 = new Item({

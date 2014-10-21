@@ -7,16 +7,16 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
 
             initialize: function() {
                 var self = this;
+                console.log("initializing from the MemoryLeakParentView (%s)", self.cid);
 
                 self.listenTo(self.model, 'change:color', self.updateCounts);
             },
-
-            subviews: {},
 
             //self.model - itemCollection
 
             render: function() {
                 var self = this;
+                console.log("rendering from the MemoryLeakParentView (%s)", self.cid);
 
                 self.$el.empty();
 
@@ -26,11 +26,7 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
 
                     self.$el.append(itemContainer);
 
-                    var view = new WhateverView();
-                    view.render();
-
-                    var itemView = self.getSubView(item);
-                    itemView.setElement(itemContainer);
+                    var itemView = new ItemView({el: itemContainer, model: item});
                     itemView.render();
                 });
 
@@ -39,19 +35,6 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
                 self.updateCounts();
 
                 return self;
-            },
-
-            getSubView: function(item) {
-                var self = this;
-
-                if (self.subviews[item.id]) {
-                    return self.subviews[item.id];
-                } else {
-                    var itemView = new ItemView({model: item});
-                    self.subviews[item.id] = itemView;
-
-                    return itemView;
-                }
             },
 
             updateCounts: function() {
