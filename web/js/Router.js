@@ -32,7 +32,7 @@ define([
             self.parentView = new ParentView({el: '#content', model: self.itemCollection});
 
 
-            self.memoryLeakParentView = new MemoryLeakParentView({el: '#content', model: self.itemCollection});
+            //self.memoryLeakParentView = new MemoryLeakParentView({el: '#content', model: self.itemCollection});
 
 
 
@@ -44,8 +44,8 @@ define([
         showMain: function () {
             var self = this;
 
-            //self.parentView.render();
-            self.memoryLeakParentView.render();
+            self.parentView.render();
+            //self.memoryLeakParentView.render();
         },
 
         showItem: function (id) {

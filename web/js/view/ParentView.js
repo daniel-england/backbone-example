@@ -26,9 +26,6 @@ define(['jquery', 'underscore', 'backbone', 'view/ItemView'],
 
                     self.$el.append(itemContainer);
 
-                    var view = new WhateverView();
-                    view.render();
-
                     var itemView = self.getSubView(item);
                     itemView.setElement(itemContainer);
                     itemView.render();
